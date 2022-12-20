@@ -51,32 +51,33 @@ class PreventRequestsDuringMaintenance extends Middleware
 ## Usage
 ```
 /* access code which is you used on devtool.php default access code is 1111*/
+
 //clear all cache,config,route,views etc
-{your_domain}/dev/clear/{access_code}
+Route::get("/dev/clear/{access_code}", [DevToolController::class, "clear"]);
 
 //migrate your file
-{your_domain}/dev/migration/{access_code}
+Route::get("/dev/migration/{access_code}", [DevToolController::class, "migration"]);
 
 //passport install
-{your_domain}/dev/passport/install/{access_code}
+Route::get("/dev/passport/install/{access_code}", [DevToolController::class, "passportInstall"]);
 
 //make your project maintainen mode
-{your_domain}/dev/maintain/mode/{access_code}
+Route::get("/dev/maintain/mode/{access_code}", [DevToolController::class, "maintainMode"]);
 
 //make your project live mode
-{your_domain}/dev/live/mode/{access_code}
+Route::get("/dev/live/mode/{access_code}", [DevToolController::class, "liveMode"]);
 
 //storage symbalic link create
-{your_domain}/dev/storage/link/{access_code}
+Route::get("/dev/storage/link/{access_code}", [DevToolController::class, "storageLink"]);
 
 /*
 ** Advance dev tool routes
 */
 //your controller name pass which you want to remove
-{your_domain}/dev/remove/controller/{access_code}/{name}
+Route::get("/dev/remove/controller/{access_code}/{name}", [AdvanceDevToolController::class, "removeController"]);
 
 //your model name pass which you want to remove
-{your_domain}/dev/remove/model/{access_code}/{name}
+Route::get("/dev/remove/model/{access_code}/{name}", [AdvanceDevToolController::class, "removeModel"]);
 
 ```
 
