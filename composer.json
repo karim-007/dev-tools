@@ -1,0 +1,37 @@
+{
+    "name": "karim007/dev-tools",
+    "description": "This is dev tools for laravel",
+    "type": "library",
+    "keywords": [
+        "laravel",
+        "laravel-dev-tools",
+        "dev-tools"
+    ],
+    "require": {
+        "php": "^7.4|^8.0|^8.1",
+        "illuminate/support": "~6|~7|~8|~9"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Karim007\\DevTools\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md abdul karim",
+            "email": "karim.cse007@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Karim007\\DevTools\\DevToolServiceProvider"
+            ],
+            "aliases": {
+                "DevTools": "Karim007\\DevTools\\DevTools"
+            }
+        }
+    }
+}
