@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "dev_sandbox"         => env("DEV_SANDBOX", true),
+    "access_code"         => env("DEV_TOOL_ACCESS_CODE", 1111),
     'timezone'        => 'Asia/Dhaka',
     /*
       |--------------------------------------------------------------------------
