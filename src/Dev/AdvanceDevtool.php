@@ -13,7 +13,7 @@ use Illuminate\Contracts\Foundation\Application;
 class AdvanceDevtool
 {
 
-    public function removeController($name)
+    public function rController($name)
     {
         try {
             $controllerName = $name.'.php';

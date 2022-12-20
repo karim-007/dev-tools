@@ -4,6 +4,7 @@ namespace Karim007\DevTools;
 
 use Illuminate\Support\ServiceProvider;
 use Karim007\DevTools\Dev\Devtool;
+use Karim007\DevTools\Facade\AdvanceDevTool;
 
 class DevToolServiceProvider extends ServiceProvider
 {
@@ -33,6 +34,9 @@ class DevToolServiceProvider extends ServiceProvider
 
         $this->app->bind("devtool", function () {
             return new Devtool();
+        });
+        $this->app->bind("advancedevtool", function () {
+            return new AdvanceDevTool();
         });
     }
 }

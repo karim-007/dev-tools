@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Facade;
  * @method static maintainMode()
  * @method static liveMode()
  * @method static storageLink()
- * @method static removeController($name)
  */
 class DevTool extends Facade
 {

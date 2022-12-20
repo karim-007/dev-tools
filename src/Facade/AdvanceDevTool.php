@@ -5,7 +5,7 @@ namespace Karim007\DevTools\Facade;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static removeController($name)
+ * @method static rController($name)
  * @method static removeModel($name)
  */
 class AdvanceDevTool extends Facade
@@ -17,6 +17,6 @@ class AdvanceDevTool extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'advanceDevtool';
+        return \Karim007\DevTools\Dev\AdvanceDevtool::class;
     }
 }
