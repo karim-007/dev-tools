@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Facade;
  * @method static maintainMode()
  * @method static liveMode()
  * @method static storageLink()
+ * @method static accessDenied()
  */
 class DevTool extends Facade
 {

@@ -12,7 +12,6 @@ use Illuminate\Contracts\Foundation\Application;
 
 class AdvanceDevtool
 {
-
     public function rController($name)
     {
         try {

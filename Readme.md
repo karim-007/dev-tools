@@ -50,6 +50,7 @@ class PreventRequestsDuringMaintenance extends Middleware
 
 ## Usage
 ```
+/* access code which is you used on devtool.php default access code is 1111*/
 //clear all cache,config,route,views etc
 {your_domain}/dev/clear/{access_code}
 

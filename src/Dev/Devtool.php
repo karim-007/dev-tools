@@ -99,5 +99,10 @@ class Devtool
         if ($type == 'json') return response()->json(['status'=>$status,'message'=>$message],200);
         else return $message;
     }
+    public function accessDenied(){
+        $type = config("devtool.response_type");
+        if ($type == 'json') return response()->json(['status'=>'fail','message'=>'Invalid Access code'],200);
+        else return 'Invalid Access code';
+    }
 
 }

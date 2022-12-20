@@ -4,28 +4,46 @@ use Illuminate\Http\Request;
 use Karim007\DevTools\Facade\DevTool;
 class DevToolController
 {
-    public function clear()
+    /**
+     * @var string $access_granded
+     */
+    protected $access_granded=false;
+
+    public function __construct()
     {
-        return DevTool::clear();
+        if (config("devtool.access_code") == \request('access_code')){
+            $this->access_granded = true;
+        }
     }
-    public function migration()
+
+    public function clear($access_code)
     {
-        return DevTool::migration();
+        if (!$this->access_granded) return DevTool::accessDenied();
+        else return DevTool::clear();
     }
-    public function passportInstall()
+    public function migration($access_code)
     {
-        return DevTool::passportInstall();
+        if (!$this->access_granded) return DevTool::accessDenied();
+        else return DevTool::migration();
     }
-    public function maintainMode()
+    public function passportInstall($access_code)
     {
-        return DevTool::maintainMode();
+        if (!$this->access_granded) return DevTool::accessDenied();
+        else return DevTool::passportInstall();
     }
-    public function liveMode()
+    public function maintainMode($access_code)
     {
-        return DevTool::liveMode();
+        if (!$this->access_granded) return DevTool::accessDenied();
+        else return DevTool::maintainMode();
     }
-    public function storageLink()
+    public function liveMode($access_code)
     {
-        return DevTool::storageLink();
+        if (!$this->access_granded) return DevTool::accessDenied();
+        else  return DevTool::liveMode();
+    }
+    public function storageLink($access_code)
+    {
+        if (!$this->access_granded) return DevTool::accessDenied();
+        else  return DevTool::storageLink();
     }
 }
