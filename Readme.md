@@ -31,7 +31,7 @@ After publish config file setup your credential. you can see this in your config
 
 add it in your PreventRequestsDuringMaintenance middle ware
 ```
-'/dev/live/mode/{access_code}'
+'/dev/live/mode/*'
 
 **it will be look like
 
@@ -43,7 +43,7 @@ class PreventRequestsDuringMaintenance extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        '/dev/live/mode/{access_code}'
+        '/dev/live/mode/*'
     ];
 }
 ```
@@ -61,13 +61,13 @@ Route::get("/dev/migration/{access_code}", [DevToolController::class, "migration
 //passport install
 Route::get("/dev/passport/install/{access_code}", [DevToolController::class, "passportInstall"]);
 
-//make your project maintainen mode
+//make your project maintained mode
 Route::get("/dev/maintain/mode/{access_code}", [DevToolController::class, "maintainMode"]);
 
 //make your project live mode
 Route::get("/dev/live/mode/{access_code}", [DevToolController::class, "liveMode"]);
 
-//storage symbalic link create
+//storage symbolic link create
 Route::get("/dev/storage/link/{access_code}", [DevToolController::class, "storageLink"]);
 
 /*
